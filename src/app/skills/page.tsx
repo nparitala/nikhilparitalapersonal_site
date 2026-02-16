@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaReact, FaPython, FaDocker, FaGitAlt, FaAws, FaDatabase, FaHtml5, FaCss3Alt, FaNodeJs } from 'react-icons/fa';
-import { SiDotnet, SiApachekafka, SiTypescript, SiKubernetes, SiHelm, SiGitlab, SiGo, SiRabbitmq, SiMicrosoftazure, SiTerraform, SiDynatrace } from 'react-icons/si';
+import { FaCode, FaReact, FaPython, FaDocker, FaGitAlt, FaDatabase, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { SiDotnet, SiKubernetes, SiHelm, SiGitlab, SiRabbitmq, SiMicrosoftazure, SiDynatrace, SiMongodb, SiOracle, SiPostman, SiSwagger } from 'react-icons/si';
 import AnimatedSection from '@/components/AnimatedSection';
 import SectionHeading from '@/components/SectionHeading';
 import PageTransition from '@/components/PageTransition';
@@ -21,33 +21,32 @@ interface Skill {
 
 const allSkills: Skill[] = [
   // Backend
+  { name: 'Python', level: 90, icon: FaPython, color: 'text-yellow-500', barColor: 'bg-yellow-500', category: 'Backend' },
   { name: 'C#', level: 90, icon: FaCode, color: 'text-indigo-500', barColor: 'bg-indigo-500', category: 'Backend' },
-  { name: '.NET', level: 88, icon: SiDotnet, color: 'text-purple-500', barColor: 'bg-purple-500', category: 'Backend' },
-  { name: 'Golang', level: 82, icon: SiGo, color: 'text-cyan-500', barColor: 'bg-cyan-500', category: 'Backend' },
-  { name: 'Azure Functions', level: 80, icon: SiMicrosoftazure, color: 'text-blue-500', barColor: 'bg-blue-500', category: 'Backend' },
-  { name: 'REST APIs', level: 90, icon: FaDatabase, color: 'text-blue-600', barColor: 'bg-blue-600', category: 'Backend' },
-  { name: 'Python', level: 80, icon: FaPython, color: 'text-yellow-500', barColor: 'bg-yellow-500', category: 'Backend' },
-  { name: 'Node.js', level: 75, icon: FaNodeJs, color: 'text-green-500', barColor: 'bg-green-500', category: 'Backend' },
+  { name: '.NET (ASP.NET Core, Web API, MVC)', level: 92, icon: SiDotnet, color: 'text-purple-500', barColor: 'bg-purple-500', category: 'Backend' },
+  { name: 'REST APIs', level: 92, icon: FaDatabase, color: 'text-blue-600', barColor: 'bg-blue-600', category: 'Backend' },
+  { name: 'Azure Functions', level: 85, icon: SiMicrosoftazure, color: 'text-blue-500', barColor: 'bg-blue-500', category: 'Backend' },
   // Frontend
-  { name: 'React', level: 85, icon: FaReact, color: 'text-cyan-500', barColor: 'bg-cyan-500', category: 'Frontend' },
-  { name: 'TypeScript', level: 85, icon: SiTypescript, color: 'text-blue-500', barColor: 'bg-blue-500', category: 'Frontend' },
-  { name: 'HTML5', level: 90, icon: FaHtml5, color: 'text-orange-500', barColor: 'bg-orange-500', category: 'Frontend' },
-  { name: 'CSS3', level: 85, icon: FaCss3Alt, color: 'text-blue-400', barColor: 'bg-blue-400', category: 'Frontend' },
+  { name: 'React', level: 80, icon: FaReact, color: 'text-cyan-500', barColor: 'bg-cyan-500', category: 'Frontend' },
+  { name: 'HTML5', level: 85, icon: FaHtml5, color: 'text-orange-500', barColor: 'bg-orange-500', category: 'Frontend' },
+  { name: 'CSS3', level: 80, icon: FaCss3Alt, color: 'text-blue-400', barColor: 'bg-blue-400', category: 'Frontend' },
+  { name: 'JavaScript', level: 84, icon: FaCode, color: 'text-yellow-400', barColor: 'bg-yellow-400', category: 'Frontend' },
   // Data
-  { name: 'SQL', level: 90, icon: FaDatabase, color: 'text-indigo-500', barColor: 'bg-indigo-500', category: 'Data' },
-  { name: 'Apache Kafka', level: 80, icon: SiApachekafka, color: 'text-gray-700 dark:text-gray-300', barColor: 'bg-gray-700', category: 'Data' },
-  { name: 'RabbitMQ', level: 78, icon: SiRabbitmq, color: 'text-orange-600', barColor: 'bg-orange-600', category: 'Data' },
+  { name: 'SQL Server', level: 92, icon: FaDatabase, color: 'text-indigo-500', barColor: 'bg-indigo-500', category: 'Data' },
+  { name: 'MongoDB', level: 86, icon: SiMongodb, color: 'text-green-600', barColor: 'bg-green-600', category: 'Data' },
+  { name: 'Oracle', level: 85, icon: SiOracle, color: 'text-red-600', barColor: 'bg-red-600', category: 'Data' },
+  { name: 'DACPAC Deployments', level: 84, icon: FaDatabase, color: 'text-sky-600', barColor: 'bg-sky-600', category: 'Data' },
   // DevOps
   { name: 'Git', level: 90, icon: FaGitAlt, color: 'text-orange-600', barColor: 'bg-orange-600', category: 'DevOps' },
-  { name: 'Docker', level: 80, icon: FaDocker, color: 'text-blue-500', barColor: 'bg-blue-500', category: 'DevOps' },
-  { name: 'AWS', level: 75, icon: FaAws, color: 'text-yellow-500', barColor: 'bg-yellow-500', category: 'DevOps' },
-  { name: 'Azure', level: 75, icon: SiMicrosoftazure, color: 'text-blue-500', barColor: 'bg-blue-500', category: 'DevOps' },
-  { name: 'Terraform', level: 80, icon: SiTerraform, color: 'text-purple-600', barColor: 'bg-purple-600', category: 'DevOps' },
-  { name: 'Helm', level: 75, icon: SiHelm, color: 'text-blue-700', barColor: 'bg-blue-700', category: 'DevOps' },
-  { name: 'Kubernetes', level: 70, icon: SiKubernetes, color: 'text-blue-600', barColor: 'bg-blue-600', category: 'DevOps' },
-  { name: 'GitLab CI/CD', level: 82, icon: SiGitlab, color: 'text-orange-500', barColor: 'bg-orange-500', category: 'DevOps' },
-  { name: 'Dynatrace', level: 78, icon: SiDynatrace, color: 'text-green-500', barColor: 'bg-green-500', category: 'DevOps' },
-  { name: 'DQL', level: 72, icon: FaDatabase, color: 'text-cyan-600', barColor: 'bg-cyan-600', category: 'DevOps' },
+  { name: 'Azure', level: 88, icon: SiMicrosoftazure, color: 'text-blue-500', barColor: 'bg-blue-500', category: 'DevOps' },
+  { name: 'Docker', level: 90, icon: FaDocker, color: 'text-blue-500', barColor: 'bg-blue-500', category: 'DevOps' },
+  { name: 'Kubernetes (AKS)', level: 90, icon: SiKubernetes, color: 'text-blue-600', barColor: 'bg-blue-600', category: 'DevOps' },
+  { name: 'Helm', level: 88, icon: SiHelm, color: 'text-blue-700', barColor: 'bg-blue-700', category: 'DevOps' },
+  { name: 'GitLab CI/CD', level: 92, icon: SiGitlab, color: 'text-orange-500', barColor: 'bg-orange-500', category: 'DevOps' },
+  { name: 'Dynatrace', level: 85, icon: SiDynatrace, color: 'text-green-500', barColor: 'bg-green-500', category: 'DevOps' },
+  { name: 'Swagger', level: 86, icon: SiSwagger, color: 'text-green-500', barColor: 'bg-green-500', category: 'DevOps' },
+  { name: 'Postman', level: 85, icon: SiPostman, color: 'text-orange-500', barColor: 'bg-orange-500', category: 'DevOps' },
+  { name: 'RabbitMQ', level: 80, icon: SiRabbitmq, color: 'text-orange-600', barColor: 'bg-orange-600', category: 'DevOps' },
 ];
 
 export default function SkillsPage() {

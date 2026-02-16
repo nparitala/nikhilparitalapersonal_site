@@ -25,8 +25,8 @@ export default function Footer() {
               NP
             </Link>
             <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
-              Senior Software Engineer and Platform Engineer building scalable systems,
-              cloud platforms, and production-ready software.
+              Senior Software Engineer building cloud-native microservices, secure APIs,
+              and production-ready platforms.
             </p>
           </div>
 
@@ -87,7 +87,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-10 pt-8 border-t border-gray-200 dark:border-gray-700">
           <p className="text-center text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Nikhil Paritala. All rights reserved.
+            &copy; {new Date().getFullYear()} Nikhil Chowdary. All rights reserved.
           </p>
         </div>
       </div>

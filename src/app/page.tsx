@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { FaChevronDown, FaReact, FaQuoteLeft } from 'react-icons/fa';
-import { SiDotnet, SiTypescript, SiKubernetes, SiRabbitmq, SiTerraform, SiMicrosoftazure, SiGo } from 'react-icons/si';
+import { FaChevronDown, FaReact, FaQuoteLeft, FaPython, FaDatabase } from 'react-icons/fa';
+import { SiDotnet, SiKubernetes, SiGitlab, SiMicrosoftazure, SiDocker, SiMongodb, SiOracle } from 'react-icons/si';
 import TypeWriter from '@/components/TypeWriter';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import AnimatedSection from '@/components/AnimatedSection';
@@ -12,32 +12,34 @@ import SectionHeading from '@/components/SectionHeading';
 
 const skills = [
   { name: '.NET', icon: SiDotnet, color: 'text-purple-500' },
-  { name: 'Golang', icon: SiGo, color: 'text-cyan-500' },
+  { name: 'Python', icon: FaPython, color: 'text-yellow-500' },
   { name: 'React', icon: FaReact, color: 'text-cyan-500' },
-  { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500' },
   { name: 'Azure', icon: SiMicrosoftazure, color: 'text-blue-500' },
-  { name: 'Terraform', icon: SiTerraform, color: 'text-purple-600' },
-  { name: 'RabbitMQ', icon: SiRabbitmq, color: 'text-orange-600' },
+  { name: 'GitLab CI/CD', icon: SiGitlab, color: 'text-orange-500' },
+  { name: 'Docker', icon: SiDocker, color: 'text-blue-500' },
   { name: 'Kubernetes', icon: SiKubernetes, color: 'text-blue-600' },
+  { name: 'SQL Server', icon: FaDatabase, color: 'text-indigo-500' },
+  { name: 'MongoDB', icon: SiMongodb, color: 'text-green-600' },
+  { name: 'Oracle', icon: SiOracle, color: 'text-red-600' },
 ];
 
 const featuredProjects = [
   {
-    title: 'OAuth SDK Development',
-    description: 'Built secure SDKs with OAuth token flow support for seamless authentication and integration.',
-    tags: ['OAuth 2.0', 'SDK', '.NET', 'Security'],
+    title: 'GitLab CI/CD Standardization',
+    description: 'Designed standardized build, test, security scan, and release pipelines with rollback-friendly deployment patterns.',
+    tags: ['GitLab CI/CD', 'Security Scans', 'Release Engineering'],
     category: 'Backend',
   },
   {
-    title: 'Azure Functions Platform Services',
-    description: 'Implemented Azure Functions in .NET and Python for scalable event-driven backend processing.',
-    tags: ['Azure Functions', '.NET', 'Python', 'Serverless'],
+    title: 'AKS + Helm Platform Deployments',
+    description: 'Containerized services with Docker and deployed to AKS using Helm and environment-specific values to reduce configuration drift.',
+    tags: ['AKS', 'Helm', 'Docker', 'Kubernetes'],
     category: 'Cloud',
   },
   {
-    title: 'Notification Service in Golang',
-    description: 'Built a Golang notification service to send emails via Microsoft Graph API with resilient delivery handling.',
-    tags: ['Golang', 'Microsoft Graph API', 'Email Service'],
+    title: 'Database Deployment Automation',
+    description: 'Implemented automated database deployment workflows, including DACPAC, and improved query performance through indexing and tuning.',
+    tags: ['SQL Server', 'MongoDB', 'DACPAC', 'Performance'],
     category: 'Backend',
   },
 ];
@@ -77,7 +79,7 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white"
             >
-              Hi, I&apos;m <span className="text-gradient">Nikhil Paritala</span>
+              Hi, I&apos;m <span className="text-gradient">Nikhil Chowdary</span>
             </motion.h1>
 
             <motion.div
@@ -89,9 +91,9 @@ export default function HomePage() {
               <TypeWriter
                 words={[
                   'Senior Software Engineer',
-                  'Platform Engineer',
-                  'Backend Developer',
-                  'Full Stack Developer',
+                  'Full Stack .NET Engineer',
+                  'Cloud/DevOps Engineer',
+                  'Data & ETL Engineer',
                 ]}
               />
             </motion.div>
@@ -102,8 +104,8 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto"
             >
-              Building reliable backend systems, scalable web applications, and data-driven products
-              with a focus on clean architecture and practical impact.
+              Building cloud-native microservices, secure APIs, and ETL/data solutions across
+              finance, banking, and healthcare domains.
             </motion.p>
 
             <motion.div
@@ -147,13 +149,13 @@ export default function HomePage() {
               <div>
                 <SectionHeading title="About Me" subtitle="A glimpse into who I am" />
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                  I&apos;m a Software Engineer focused on backend development, distributed systems,
-                  and cloud-ready architecture. I specialize in building secure APIs, scalable
-                  services, and reliable platforms for production workloads.
+                  I&apos;m a Software Engineer with 5+ years of experience building cloud-native
+                  microservices, full-stack web applications, and data pipelines with Python and
+                  .NET.
                 </p>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                  I work across the stack when needed, with strong hands-on experience in .NET,
-                  TypeScript, Python, cloud services, and platform engineering workflows.
+                  I focus on secure APIs, GitLab CI/CD automation, AKS and Helm deployments, and
+                  production observability with Dynatrace.
                 </p>
                 <Link
                   href="/about"
@@ -167,7 +169,7 @@ export default function HomePage() {
                 <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden">
                   <Image
                     src="/profile-photo.jpg"
-                    alt="Nikhil Paritala"
+                    alt="Nikhil Chowdary"
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -187,9 +189,9 @@ export default function HomePage() {
           <AnimatedSection>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <AnimatedCounter target={5} suffix="+" label="Years Experience" />
-              <AnimatedCounter target={15} suffix="+" label="Projects Delivered" />
-              <AnimatedCounter target={15} suffix="+" label="Technologies" />
-              <AnimatedCounter target={2} suffix="" label="Certifications" />
+              <AnimatedCounter target={20} suffix="+" label="Projects Delivered" />
+              <AnimatedCounter target={20} suffix="+" label="Technologies" />
+              <AnimatedCounter target={4} suffix="" label="Companies" />
             </div>
           </AnimatedSection>
         </div>

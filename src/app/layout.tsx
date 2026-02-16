@@ -17,8 +17,8 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nikhil Paritala - Senior Software Engineer | Platform Engineer",
-  description: "Senior Software Engineer and Platform Engineer focused on cloud-native systems, scalable platforms, and full-stack delivery.",
+  title: "Nikhil Chowdary - Senior Software Engineer | Full Stack .NET | Cloud/DevOps",
+  description: "Senior Software Engineer focused on cloud-native microservices, secure APIs, GitLab CI/CD, AKS deployments, and data engineering.",
 };
 
 export default function RootLayout({
