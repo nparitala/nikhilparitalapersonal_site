@@ -17,21 +17,14 @@ const experiences = [
     description: 'Designed and delivered backend services in .NET and Python, standardized GitLab CI/CD, and deployed containerized services to AKS using Helm.',
   },
   {
-    period: 'Jan 2024 - Aug 2024',
+    period: 'Mar 2023 - Aug 2024',
     role: 'Full Stack .NET Developer',
     company: 'Trimble',
     location: 'Westminster, CO',
     description: 'Built ASP.NET / MVC / Web API applications, implemented secure data flows, and optimized SQL Server and Oracle database performance.',
   },
   {
-    period: 'Mar 2023 - Dec 2023',
-    role: 'Data Engineer',
-    company: 'AcrotekIT',
-    location: 'Charlotte, NC',
-    description: 'Built ETL/ELT data pipelines with Python and SQL, supported containerized workloads, and improved data quality and ingestion reliability.',
-  },
-  {
-    period: 'Dec 2019 - Jun 2021',
+    period: 'Jan 2019 - Jul 2021',
     role: 'Software Engineer',
     company: 'Citi',
     location: 'Hyderabad, India',
